@@ -57,6 +57,7 @@ si clona/estrae direttamente in `~/.claude` e si versiona quella cartella.
 │   ├── pre-compact.sh         # PreCompact: checkpoint + log
 │   └── ctx-stats.sh           # consiglia le soglie dai log
 ├── skills/
+│   ├── astro-svelte-stack/                   # regole stack Astro/Svelte + matrice versioni (paths-scoped)
 │   ├── context-governance/SKILL.md          # procedura compattazione/cambio task (on-demand)
 │   └── repo-onboarding/
 │       ├── SKILL.md                          # flusso bozza tech-stack.md
@@ -84,6 +85,7 @@ si clona/estrae direttamente in `~/.claude` e si versiona quella cartella.
 | `hooks/repo-context.sh` | `SessionStart`: inietta contesto repo + folder graph; ripresa post-compact. |
 | `skills/repo-onboarding/` | Skill: bozza di `tech-stack.md` per un nuovo repo (bundle `scripts/new-repo-context.sh`). |
 | `skills/context-governance/` | Skill: procedura compattazione/cambio task (caricata on-demand). |
+| `skills/astro-svelte-stack/` | Skill: regole stack Astro(4–7)/Svelte(3–5), zero-overkill e protocollo ricerca; matrice versioni in `references/` (attiva sui file `.astro`/`.svelte`). |
 | `hooks/context-budget.sh` | `UserPromptSubmit`: segnale di pressione del contesto (token reali / byte). |
 | `hooks/pre-compact.sh` | `PreCompact`: checkpoint + backup transcript + log. |
 | `hooks/ctx-stats.sh` | Legge i log e **consiglia** `CTX_WARN_PCT`/`CTX_SOFT_PCT`. |
