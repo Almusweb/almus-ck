@@ -31,7 +31,7 @@ proponi→conferma (mai scrivere senza ok dell'utente).
    ```
    Da quel momento l'hook `SessionStart` lo inietta in automatico a ogni avvio in quel repo.
 
-## Vincoli 
+## Vincoli
 - Tieni il file **breve e operativo** (< 60 righe): contesto minimo ad alto valore, non documentazione.
 - **Mai** segreti nel file. **Mai** creare `.claude/` o `tech-stack.md` dentro un repository di progetto:
   il contesto vive solo sotto `~/.claude/repos/`.
