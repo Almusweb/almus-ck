@@ -1,0 +1,57 @@
+# ─────────────────────────────────────────────────────────────────────────
+# Claude Context Kit — .gitignore per ~/.claude VERSIONATO
+# Versiona SOLO la configurazione del kit. Ignora segreti, transcript e stato
+# che Claude Code scrive a runtime. Vincolo di privacy:
+# nessun transcript, credenziale o contesto di progetto deve finire in git.
+# ─────────────────────────────────────────────────────────────────────────
+
+# ── Segreti — MAI in git ────────────────────────────────────────────────
+.credentials.json
+credentials.json
+*.pem
+.claude.json
+.claude.json.backup.*
+security_warnings_*.json
+mcp-needs-auth-cache.json
+
+# ── Transcript di sessione e cronologia (contenuti sensibili dei repo) ──
+projects/
+history.jsonl
+plans/
+file-history/
+paste-cache/
+
+# ── Stato per-sessione / runtime di Claude Code ─────────────────────────
+todos/
+tasks/
+teams/
+session-env/
+shell-snapshots/
+debug/
+backups/
+cache/
+ide/
+plugins/
+
+# ── Telemetria / statistiche ────────────────────────────────────────────
+statsig/
+telemetry/
+usage-data/
+stats-cache.json
+
+# ── Stato del KIT (checkpoint, transcript di backup, campioni, soglie) ──
+# Contiene copie di transcript dei repo: SEMPRE fuori da git.
+state/
+
+# ── Contesti repo reali ─────────────────────────────────────────────────
+# Per default NON versionati: descrivono sistemi/architetture dei progetti.
+# Si versiona solo il template. Per tracciarne uno CONSAPEVOLMENTE:
+#   git add -f repos/<nome-repo>/
+repos/*
+!repos/_TEMPLATE/
+!repos/_TEMPLATE/**
+
+# ── Backup/merge e rumore OS ────────────────────────────────────────────
+*.bak-*
+*.new
+.DS_Store
